@@ -7,30 +7,29 @@
 }
 
 /* padronização de cores */
-html{
+html {
 
-    /* Variáveis do css */
+    /* variáveis do css */
     --corPrimaria:#017143;
 
-    --corSecundaria:#333;
+    --corSecundaria: #333;
 
-    --corTerciaria:#fff;
+    --corTerciaria: #fff;
 }
 
 /* Container principal */
-
 main{
- position: relative;
- width: 100%;
- min-height: 100vh;
- padding: 100px;
- display: flex;
- justify-content: space-between;
- align-items:center;
- background-color: var(--corTerciaria);
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--corTerciaria);
 }
 
-/* Header(cabeçalho) */
+/* Header (cabeçalho) */
 header{
     position:absolute;
     top:0;
@@ -42,25 +41,23 @@ header{
     align-items: center;
 }
 
-header.logo{
+header .logo{
     position: relative;
     max-width: 80px;
 }
 header .logo:hover{
     filter: invert(0.1);
 }
-
 header ul li{
     list-style: none;
 }
-
 header ul{
     position: relative;
     display: flex;
 }
-
 header ul li a{
-    /* garante que o elemento seja renderizado em linhas dentro do bloco */
+    /* garante que o elemento seja renderizado
+    em linha dentro do bloco */
     display: inline-block;
     color: var(--corSecundaria);
     font-size: 20px;
@@ -69,10 +66,9 @@ header ul li a{
     text-decoration: none;
     padding: 5px;
 }
-
 /* hover dos links do cabeçalho */
 header ul li a:hover{
-    background-color: var(--corPrimaria);
+    background-color: var(--corPrimaria) ;
     color: var(--corTerciaria);
     border-radius: 7px;
 }
@@ -90,30 +86,26 @@ header ul li a:hover{
     /* limita o espaço do texto */
     max-width: 600px;
 }
-
-.conteudo .textoPrincipal h2{
+.conteudo .textoPrincipal h2 {
     color: var(--corSecundaria);
-    /* 1em = 1vez o tamanho do elemento */
+    /* 1em = 1vez o tamanho da fonte do elemento */
     /* 16px*2.5= 40px */
     font-size: 2.5em;
     /* espaçamento vertical da fonte */
     line-height: 1.5em;
     font-weight: 500;
 }
-
 .conteudo .textoPrincipal h2 span {
     color: var(--corPrimaria);
     font-size: 1.2em;
     font-weight: 900;
 }
-
 .conteudo .textoPrincipal p{
     color: var(--corSecundaria);
 }
-
 .conteudo .textoPrincipal a{
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 20px; 
     padding: 8px 20px;
     background-color: var(--corPrimaria);
     color: var(--corTerciaria);
@@ -128,10 +120,9 @@ header ul li a:hover{
     border-radius: 40px;
     font-weight: 500;
     text-decoration: none;
-    
 }
 
-/* imagem do copo grande🍦 */
+/* imagem do copo grande 🍦 */
 .conteudo .imgBox{
     width: 600px;
     display: flex;
@@ -139,13 +130,11 @@ header ul li a:hover{
     padding-right: 50px;
     margin-top: 50px;
 }
-
 .conteudo .imgBox img{
     max-width: 340px;
 }
 
-/* copos menores🍦 */
-
+/* copos menores 🍦 */
 .sorvetes {
     position: absolute;
     left: 50%;
@@ -153,7 +142,6 @@ header ul li a:hover{
     transform: translateX(-50%);
     display: flex;
 }
-
 .sorvetes li{
     list-style: none;
     display: inline-block;
@@ -161,12 +149,9 @@ header ul li a:hover{
     cursor: pointer;
     transition: 0.5s;
 }
-
 .sorvetes li:hover {
     transform: translateY(-15px);
-    
 }
-
 .sorvetes li img{
     max-width: 60px;
 }
@@ -182,50 +167,43 @@ header ul li a:hover{
     justify-content: center;
     align-items: center;
 }
-
 .sociais li {
     list-style: none;
-    
 }
 #threads{
     height: 40px;
 }
-
 .sociais li a{
-    display: inline-block;
+    display:inline-block;
     margin: 5px 0;
+    /* altera a escala de tamanho */
     transform: scale(0.6);
     /* inverte a cor para branco */
     filter: invert(1);
 }
-
 .sociais li a:hover{
     color: var(--corSecundaria);
     filter: invert(0);
 }
 
 /* circulo */
-
 .circulo{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height:100%;
     background: var(--corPrimaria);
 
-
-/* tamanho --> lado --> posição */
-clip-path: circle(600px at right 800px);
+    /* tamanho --> lado --> posição */
+    clip-path: circle(600px at right 800px);
 }
 
-/* *****Responsividade***** */
+/* ******Responsividade******** */
 @media (max-width: 992px){
-
     header{
         padding: 20px;
     }
-
     header .logo{
         max-width: 60px;
     }
@@ -247,8 +225,8 @@ clip-path: circle(600px at right 800px);
         background-repeat: no-repeat;
         filter: invert(1);
         z-index: 11;
-    }
-    .toggle .active{
+    }    
+    .toggle.active{
         position: fixed;
         right: 20px;
         /* preenchido com a imagem de 'fechar' */
@@ -257,23 +235,59 @@ clip-path: circle(600px at right 800px);
         background-position: center;
         background-repeat: no-repeat;
     }
+
     /* formar a lista do menu hamburguer */
     header ul.links.active {
-        position:fixed;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 40%;
+        height: 45%;
         display: flex;
         flex-direction: column;
         align-items: center;
         background-color: #f2f2f2;
         z-index: 10;
-
     }
-    header ul li a{
+    header ul li a {
         font-size: 1.5em;
         margin: 5px 0;
     }
 
+    /* Conteúdo */
+    main {
+        padding: 20px 20px 120px;
+    }
+
+    .conteudo {
+        flex-direction: column; /* Joga o conteudo em coluna (Blocos) */
+        margin-top: 100px;
+    }
+
+    .conteudo .textoPrincipal h2 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }    
+    .conteudo .textoPrincipal {
+        max-width: 100%;
+    }    
+    .conteudo .imgBox {
+        max-width: 300px;
+
+    }    
+    .thumb li img {
+        max-width: 40px;
+    }
+    .circulo {
+        clip-path: circle(400px at center bottom);
+    }
+    .sociais {
+        /* Estiliza os sociais */
+        /* background: #017143; */
+        background: var(--corPrimaria);
+        right: 0;
+        width: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
 }
